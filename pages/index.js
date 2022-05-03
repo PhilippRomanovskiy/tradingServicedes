@@ -18,7 +18,7 @@ export default function Home() {
             Connect Wallet
           </Button>
           <Details>
-            You need Chrome to be
+            Chrome web browser extension is required to connect to the wallet and 
             <br /> able to run this app.
           </Details>
         </WalletConnect>

@@ -38,6 +38,7 @@ const OfferCard = styled.div`
     padding: 1.5rem;
     display: flex;
     felx-direction: column;
+    background-color: #282b2f;
 
 `
 

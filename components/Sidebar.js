@@ -30,8 +30,9 @@ export default Sidebar
 const Wrapper = styled.div`
     height: calc(100vh);
     border-right: 1px solid #282b2f;
-    width: calc(22rem - 16px - 16px);
+    width: calc(17rem - 16px - 16px);
     padding: 0 1rem;
+    background: #000000;
 `
 
 const LogoContainer = styled.div`
