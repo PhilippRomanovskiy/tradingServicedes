@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Transfer from './Transfer'
 import CoinSelector from "./CoinSelector";
+import { Oval } from 'react-loader-spinner'
+import Receive from "./Receive";
 
 
 
@@ -27,7 +29,13 @@ const TransferModal = ({sanityTokens, thirdWebTokens, walletAddress}) => {
                 walletAddress={walletAddress}
             />
           case 'receive':
-            return <h2>receive</h2>
+            return (
+                <Receive 
+                selectedToken={selectedToken}
+                setAction={setAction}
+                walletAddress={walletAddress}
+                /> 
+            )
             case 'select':
                 return <CoinSelector
                     setAction={setAction}
@@ -37,6 +45,41 @@ const TransferModal = ({sanityTokens, thirdWebTokens, walletAddress}) => {
                     thirdWebTokens={thirdWebTokens}
                     walletAddress={walletAddress}
                 />
+                case 'transffering':
+                return <div 
+                   style={{
+                     width: '100%',
+                     height: '100%',
+                     display: 'flex',
+                     flexDirection: 'column',
+                     justifyContent: 'center',
+                     alignItems: 'center',
+                     fontSize: '1.5rem',
+                    }}
+                >
+                <h2>transffering is in process ...</h2>
+                <Oval
+                    height='100'
+                    width='100'
+                    color='#3773f5'
+                    ariaLabel="loading"
+                /></div>
+                case 'transferred':
+                return <div
+                    style={{
+                     width: '100%',
+                    height: '100%',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignītems: 'center',
+                    fontSize: '2rem',
+                    fontWeight: '600',
+                    color: '#27ad75',
+                    }}
+                    >
+
+                </div>
+
           default:
             return <h2>send</ h2>
         }

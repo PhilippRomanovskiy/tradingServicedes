@@ -37,8 +37,9 @@ const Transfer = ({selectedToken, setAction, thirdWebTokens, walletAddress}) => 
 
       const sendCrypto = async (amount, recepient) => {
           if(activeThirdWebToken && recepient && amount){
+            setAction('transffering');
         const tx = await activeThirdWebToken.transfer(recepient, amount.toString().concat('000000000000000000'));
-        console.log(tx); 
+        console.log(tx);  
         setAction('transfer')
           } else {
               console.error('missing fields')
