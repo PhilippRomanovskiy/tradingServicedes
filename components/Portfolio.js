@@ -6,12 +6,6 @@ import Coin from './Coin'
 import BalanceChart from './BalanceChart'
 
 
-
-
-
-
-
-
 const Portfolio = ({thirdWebTokens, sanityTokens, walletAddress}) => {
     const [walletBalance, setWalletBalance] = useState(0)   
     //thirdWebTokens[0]
