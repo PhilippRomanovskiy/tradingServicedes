@@ -21,8 +21,8 @@ const CoinSelector = ({
                 <h2>{token.name}</h2>
             ))}
             <CoinItem 
-                 key = {index}
-                 token={token}
+                 
+                 
                  sender={walletAddress}
                  selectedToken={selectedToken}
                  thirdWebTokens={thirdWebTokens}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import {BsThreeDotsVertical} from 'react-icons/bs'
-import { coins } from '../static/coins'
+import { coin } from '../static/coins'
 import Coin from './Coin'
 import BalanceChart from './BalanceChart'
 
@@ -10,33 +10,38 @@ import BalanceChart from './BalanceChart'
 
 
 
-const Portfolio = (thirdWebTokens, sanityTokens, walletAddress) => {
+
+
+const Portfolio = ({thirdWebTokens, sanityTokens, walletAddress}) => {
     const [walletBalance, setWalletBalance] = useState(0)   
     //thirdWebTokens[0]
     //.balanceOf(walletAddress)
     //.then(balance => console.log(Number(balance.displayValue) * 3100))
-    const tokenTOUSD={}
-    for (const token of sanityTokens){
-      tokenTOUSD[ token.contractAddress]=Number(token.usdPrice)
-    }
-    
+    // console.log(sanityTokens)
+    // const tokenTOUSD = {}
 
-    useEffect(()=>{
-        const calculateTotalBalance=async ()=>{
-          const totalBalance=await Promise.all(
-            thirdWebTokens.map(async token=>{
-              const balance=await token.balanceOf(walletAddress)
-              return Number(balance.displayValue)*tokenTOUSD[token.address]
+    // for (const token of sanityTokens){
+    //    tokenTOUSD[token.address] = token.balanceOf(walletAddress)
+    // }
+    
+    // console.table(tokenTOUSD)
+    // useEffect(()=>{
+    //     const calculateTotalBalance=async ()=>{
+    //       const totalBalance=await Promise.all(
+    //        thirdWebTokens.map(async token=>{
+    //           const balance=await token.balanceOf(walletAddress)
+    //          return Number(balance.displayValue)*tokenTOUSD[token.address]
                             
-            })
-          )
-          
-          setWalletBalance(totalBalance.reduce((acc, curr) => acc+curr, 0))   
-          //total balance
-        }
-   return calculateTotalBalance()
-  },[thirdWebTokens, sanityTokens])
-    // conversion is needed to the currency desired
+    //        })
+    //         )
+         
+    //     }
+    //     console.log(totalBalance)
+    //       console.log(totalBalance.reduce((acc, curr) => acc+curr, 0))   
+    //       //total balance
+        
+    //     return calculateTotalBalance()
+    // },[thirdWebTokens, sanityTokens])
     return (
     <Wrapper>
     <Content>
@@ -46,7 +51,7 @@ const Portfolio = (thirdWebTokens, sanityTokens, walletAddress) => {
                 <BalanceTitle>Portfolio balance</BalanceTitle>
                 <BalanceValue>
                     {'$'}
-                    {walletBalance.toLocaleString()} 
+                    46,000
 
                 </BalanceValue>
             </Balance>
@@ -79,7 +84,7 @@ const Portfolio = (thirdWebTokens, sanityTokens, walletAddress) => {
                 </TableRow>
             </TableItem>
             <Divider />
-            <div>{coins.map(coin => (
+            <div>{coin.map(coin => (
                 <div> 
                     <Coin coin={coin} />
                     <Divider />

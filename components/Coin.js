@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import Image from 'next/image';
-import { coins } from "../static/coins";
+import { coin } from "../static/coins";
 
 
 const Coin = ({coin}) => {
@@ -22,7 +22,7 @@ const Coin = ({coin}) => {
                       
                   </div>
               </NameCol>
-                <div style={{ flex: 2}}>
+                <div style={{flex:2}}>
                     <Primary>
                         {'$'}
                         {coin.balanceUsd}
@@ -33,7 +33,7 @@ const Coin = ({coin}) => {
                 </div>
 
               </div>
-              <div style={{ flex: 1}}>
+              <div style={{flex:1}}>
                   <Primary>
                       {'$'}
                       {coin.priceUsd}
@@ -43,10 +43,10 @@ const Coin = ({coin}) => {
                       {coin.change}%
                   </div>
               </div>
-              <div style={{ flex: 1 }}>
+              <div style={{flex:1}}>
                 {coin.allocation}%
               </div>
-              <div style={{ flex: 0 }}>
+              <div style={{flex:0}}>
                 <BsThreeDotsVertical />
               </div>
             </div>

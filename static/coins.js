@@ -1,7 +1,7 @@
 import btcLogo from '../assets/btc.png'
 import ethLogo from '../assets/eth.png'
 
-export const coins = [
+export const coin = [
   {
     name: 'Bitcoin',
     sign: 'BTC',

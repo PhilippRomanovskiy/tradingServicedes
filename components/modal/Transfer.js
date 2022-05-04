@@ -6,23 +6,23 @@ import { client } from "../../lib/sanity";
 
 const Transfer = ({selectedToken, setAction, thirdWebTokens, walletAddress}) => {
     const [amount, setAmount] = useState();
-    const [recepient, setRecepient] = useState('');
-    const [imageUrl, setImageUrl] = useState(null);
+     const [recepient, setRecepient] = useState('');
+     const [imageUrl, setImageUrl] = useState(null);
     const [activeThirdWebToken, setActiveThirdWebToken] = useState();
-    cosnt [balance, setBalance] = useState('Fetching balance...');
+     const [balance, setBalance] = useState('Fetching balance...');
 
 
-    useEffect(() => {
-        const activeToken = thirdWebTokens.find(token => token.address === selectedToken.contractAddress);
-        setActiveThirdWebToken(activeToken);
-    }, [thirdWebTokens, selectedToken]);
+    // useEffect(() => {
+    //     const activeToken = thirdWebTokens.find(token => token.address === selectedToken.contractAddress);
+    //     setActiveThirdWebToken(activeToken);
+    // }, [thirdWebTokens, selectedToken]);
 
-    useEffect(()=>{
-        console.log(selectedToken, '')
-        const url=imageUrlBuilder(client).image(selectedToken.logo).url()
-        console.log(url)
-        setImageUrl(url)
-      }, [selectedToken])
+    // useEffect(()=>{
+    //     console.log(selectedToken, '')
+    //     const url=imageUrlBuilder(client).image(selectedToken.logo).url()
+    //     console.log(url)
+    //     setImageUrl(url)
+    //   }, [selectedToken])
 
       useEffect(()=>{
         const getBalance=async ()=>{
@@ -45,7 +45,7 @@ const Transfer = ({selectedToken, setAction, thirdWebTokens, walletAddress}) => 
               console.error('missing fields')
           }
       }
-    
+    //<span>{selectedToken.symbol}</span>
     
   return <Wrapper>
     <Amount>
@@ -56,7 +56,7 @@ const Transfer = ({selectedToken, setAction, thirdWebTokens, walletAddress}) => 
     value={amount}
     onChange={e => setAmount(e.target.value)}
     />
-    <span>{selectedToken.symbol}</span>
+    
     </FlexInputContainer>
         <Warning style={{ color: amount && '#0a0b0d'}}>
             Enter the Amount you want to send
@@ -79,7 +79,7 @@ const Transfer = ({selectedToken, setAction, thirdWebTokens, walletAddress}) => 
       <FieldName>Pay with</FieldName>
       <CoinSelectList onClick={() => setAction('select')}>
           <Icon>
-              <img src={imageUrl} alt='coin'/>
+              
           </Icon>
           <CoinName>
             {selectedToken.name}
@@ -104,6 +104,10 @@ const Transfer = ({selectedToken, setAction, thirdWebTokens, walletAddress}) => 
   </Wrapper>;
 };
 export default Transfer;
+
+const Balance = styled.div`
+
+`
 
 const Wrapper=styled.div`
   display: flex;
@@ -227,4 +231,14 @@ const Wrapper=styled.div`
   `
 
   const BalanceTitle = styled.div`
+  `
+
+  const Row=styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #8a919e;
+          
+  padding: 1rem 0;
+  font-size: 1.2rem;
   `

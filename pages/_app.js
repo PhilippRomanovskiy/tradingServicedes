@@ -1,6 +1,8 @@
 import '../styles/globals.css'
 import  { ThirdwebWeb3Provider } from '@3rdweb/hooks'
-import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
+import React from 'react'
+import { render } from 'react-dom'
+//import 'react-loader-spinner/dist/loader'
 
 
 

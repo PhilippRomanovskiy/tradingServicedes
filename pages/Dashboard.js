@@ -3,17 +3,21 @@ import Header from '../components/Header'
 import styled from 'styled-components'
 import Main from '../components/Main'
 import Sidebar from '../components/Sidebar'
-import {ethers} from 'ethers'
-import { ThirdwebSDK } from '@3rdweb/sdk'
+import { ThirdwebSDK, balanceOf } from '@3rdweb/sdk'
+import { ethers } from 'ethers'
+
+
 
 const sdk = new ThirdwebSDK(
   new ethers.Wallet(
       process.env.NEXT_PUBLIC_METAMASK_KEY,
       ethers.getDefaultProvider(
-          'https://rinkeby.infura.io/v3/'
+          'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'
+          
       )
   )
 )
+
 
 
 const Dashboard = ({address}) => {

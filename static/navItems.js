@@ -21,24 +21,10 @@ export const navItems = [
     title: 'Pay',
     icon: <RiCoinsLine />,
   },
-  {
-    title: 'For You',
-    icon: <MdWeb />,
-  },
-  {
-    title: 'Learn and earn',
-    icon: <AiOutlinePlusCircle />,
-  },
-  {
-    title: 'Notifications',
-    icon: <RiNotification3Line />,
-  },
+  
   {
     title: 'Invite Friends',
     icon: <BsPersonPlus />,
   },
-  {
-    title: 'Send a gift',
-    icon: <AiOutlineGift />,
-  },
+  
 ]

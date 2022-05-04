@@ -9,9 +9,9 @@ const Receive = ({ setAction, selectedToken, walletAddress}) => {
     const [imageUrl, setImageUrl] = useState(null);
     const [copied, setCopied] = useState( false);
 
-    useEffect(() => {
-        const url = ImageUrlBuilder(client).image(selectedToken.logo).url();
-    }, [selectedToken]);
+    // useEffect(() => {
+    //     const url = ImageUrlBuilder(client).image(selectedToken.logo).url();
+    // }, [selectedToken]);
   return <Wrapper>
 
       <Content>

@@ -70,6 +70,8 @@ const Main=styled.div`
   display: flex;
   align-items: center;
   `
+  const Wrapper=styled.div`
+`
 
   const Symbol = styled.div`
   color: #888f9b;

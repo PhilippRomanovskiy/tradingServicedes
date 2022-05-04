@@ -42,7 +42,7 @@ const Header = ({walletAddress, sanityTokens, thirdWebTokens, connectWallet}) =>
       ):(
       <Button onClick={()=>connectWallet('injected')}>
         Connect Wallet
-      </ Button>
+      </Button>
       )}
             <Button style={{ backgroundColor: '#3773f5', color: '#000',background: '#282b2f',fontweight: 'bold',letterspacing: '0.1rem',color: '#fff'}}>
         Buy/Sell
