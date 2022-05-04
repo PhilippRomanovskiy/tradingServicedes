@@ -24,27 +24,27 @@ const Transfer = ({selectedToken, setAction, thirdWebTokens, walletAddress}) => 
     //     setImageUrl(url)
     //   }, [selectedToken])
 
-      useEffect(()=>{
-        const getBalance=async ()=>{
-            const balance=await activeThirdWebToken.balanceOf(walletAddress)
-            setBalance(balance.displayValue)
-        }
+      // useEffect(()=>{
+      //   const getBalance=async ()=>{
+      //       const balance=await activeThirdWebToken.balanceOf(walletAddress)
+      //       setBalance(balance.displayValue)
+      //   }
 
-        if (activeThirdWebToken){
-            getBalance()
-        }
-      }, [activeThirdWebToken] )
+      //   if (activeThirdWebToken){
+      //       getBalance()
+      //   }
+      // }, [activeThirdWebToken] )
 
-      const sendCrypto = async (amount, recepient) => {
-          if(activeThirdWebToken && recepient && amount){
-            setAction('transffering');
-        const tx = await activeThirdWebToken.transfer(recepient, amount.toString().concat('000000000000000000'));
-        console.log(tx);  
-        setAction('transfer')
-          } else {
-              console.error('missing fields')
-          }
-      }
+      // const sendCrypto = async (amount, recepient) => {
+      //     if(activeThirdWebToken && recepient && amount){
+      //       setAction('transffering');
+      //   const tx = await activeThirdWebToken.transfer(recepient, amount.toString().concat('000000000000000000'));
+      //   console.log(tx);  
+      //   setAction('transfer')
+      //     } else {
+      //         console.error('missing fields')
+      //     }
+      // }
     //<span>{selectedToken.symbol}</span>
     
   return <Wrapper>
